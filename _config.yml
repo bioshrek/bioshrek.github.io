@@ -21,7 +21,7 @@ footer-links:
   email: shrekwang1@gmail.com
   facebook: 
   flickr: 
-  github: github.com/bioshrek
+  github: bioshrek
   instagram: 
   linkedin: 
   pinterest: 
@@ -30,7 +30,7 @@ footer-links:
   stackoverflow: # your stackoverflow profile, e.g. "users/50476/bart-kiers"
 
 # Your disqus shortname, entering this will enable commenting on posts
-disqus: shrekwang
+disqus: bioshrekblog
 
 # Enter your Google Analytics web tracking code (e.g. UA-2110908-2) to activate tracking
 google_analytics: 
