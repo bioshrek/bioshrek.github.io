@@ -4,12 +4,9 @@ title: About
 permalink: /about/
 ---
 
-Some information about you!
-
-### More Information
-
-A place to include any other types of information that you'd like to include about yourself. 
+欢迎访问的我的博客，我是一名软件工程师。接触这个行业以来，感触自己的知识真是太少了。所以把接触过的知识都整理记录在这里，以此解救我可怜的大脑。
 
 ### Contact me
 
-[email@domain.com](mailto:email@domain.com)
+Email: [shrekwang1@gmail.com](mailto:shrekwang1@gmail.com)
+QQ: 529663405
