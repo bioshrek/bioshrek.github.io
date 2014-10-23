@@ -48,11 +48,13 @@ Here's an idea: why don't we take `SuperiorProject` and turn it into `**Reasonab
 
 Check out this neat program I wrote:
 
-```
+```javascript
 x = 0
 x = 2 + 2
 what is x
 ```
+
+    printf("Hello, world!");
 
 [Learn Markdown in github](https://help.github.com/articles/markdown-basics/)
 
