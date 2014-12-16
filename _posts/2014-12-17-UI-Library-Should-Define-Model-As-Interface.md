@@ -1,6 +1,6 @@
 ---
 layout: post
-title: UUID
+title: UI library should define model as interface
 ---
 
 ## UI library should define model as interface instead of concrete class 
