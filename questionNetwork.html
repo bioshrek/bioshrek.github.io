@@ -1,0 +1,501 @@
+<!doctype html>
+<html>
+<head>
+  <title>Network | Basic usage</title>
+
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.js"></script>
+  <script type="text/javascript" src="./questionNetwork.js"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis-network.min.css" rel="stylesheet" type="text/css" />
+
+  <style type="text/css">
+    #mynetwork {
+      width: 1024px;
+      height: 800px;
+      border: 1px solid lightgray;
+    }
+  </style>
+</head>
+<body>
+
+<p>
+  Create a simple network with some nodes and edges.
+</p>
+
+<div id="mynetwork"></div>
+
+<script type="text/javascript">
+  const ds = {
+  	"code": 99999,
+  	"data": {
+  		"exerciseStatus": 3,
+  		"unitName": "第八单元",
+  		"sectionName": "第一关",
+  		"allowTime": 90000,
+  		"subjectType": "0",
+  		"levelType": "23",
+  		"packageList": [{
+  			"questionInfo": {
+  				"shortQuestion": "",
+  				"question": "#{\"type\":\"para_begin\",\"style\":\"math_text\"}#由1和2这两个数字组成的没有重复数字的两位数是(  )。#{\"type\":\"para_end\"}#",
+  				"questionItem": [{
+  					"code": "A",
+  					"packageId": 3,
+  					"item": "12、21"
+  				}, {
+  					"code": "B",
+  					"packageId": 2,
+  					"item": "11、12"
+  				}, {
+  					"code": "C",
+  					"packageId": 2,
+  					"item": "21、22"
+  				}, {
+  					"code": "D",
+  					"packageId": 2,
+  					"item": "22、11"
+  				}],
+  				"questionType": 1,
+  				"rightAnswer": "[{\"blank_id\":1,\"choice\":\"A\"}]",
+  				"questionId": 2120656
+  			},
+  			"packageId": 1,
+  			"videoList": ["https://knowapp.b0.upaiyun.com/ss/audio/mp4/2shang8pailie01.mp4"]
+  		}, {
+  			"questionInfo": {
+  				"shortQuestion": "",
+  				"question": "#{\"type\":\"para_begin\",\"style\":\"math_text\"}#由1和2这两个数字组成的没有重复数字的两位数是(  )。#{\"type\":\"para_end\"}#",
+  				"questionItem": [{
+  					"code": "A",
+  					"packageId": 3,
+  					"item": "12、21"
+  				}, {
+  					"code": "B",
+  					"packageId": 2,
+  					"item": "11、12"
+  				}, {
+  					"code": "C",
+  					"packageId": 2,
+  					"item": "21、22"
+  				}, {
+  					"code": "D",
+  					"packageId": 2,
+  					"item": "22、11"
+  				}],
+  				"questionType": 1,
+  				"rightAnswer": "[{\"blank_id\":1,\"choice\":\"A\"}]",
+  				"questionId": 2120656
+  			},
+  			"packageId": 2,
+  			"videoList": ["https://knowapp.b0.upaiyun.com/ss/audio/mp4/2shang8pailie02.mp4"]
+  		}, {
+  			"questionInfo": {
+  				"shortQuestion": "",
+  				"question": "#{\"type\":\"para_begin\",\"style\":\"math_text\"}#由2、3和4组成的两位数，每个两位数的十位数和个位数不能一样，组成的两位数可以是22、33或44吗？(  )#{\"type\":\"para_end\"}#",
+  				"questionItem": [{
+  					"code": "A",
+  					"packageId": 4,
+  					"item": "可以"
+  				}, {
+  					"code": "B",
+  					"packageId": 5,
+  					"item": "不可以"
+  				}],
+  				"questionType": 1,
+  				"rightAnswer": "[{\"blank_id\":1,\"choice\":\"B\"}]",
+  				"questionId": 2120657
+  			},
+  			"packageId": 3,
+  			"videoList": ["https://knowapp.b0.upaiyun.com/ss/audio/mp4/2shang8pailie03.mp4"]
+  		}, {
+  			"questionInfo": {
+  				"shortQuestion": "",
+  				"question": "#{\"type\":\"para_begin\",\"style\":\"math_text\"}#由2、3和4组成的两位数，每个两位数的十位数和个位数不能一样，组成的两位数可以是22、33或44吗？(  )#{\"type\":\"para_end\"}#",
+  				"questionItem": [{
+  					"code": "A",
+  					"packageId": 4,
+  					"item": "可以"
+  				}, {
+  					"code": "B",
+  					"packageId": 5,
+  					"item": "不可以"
+  				}],
+  				"questionType": 1,
+  				"rightAnswer": "[{\"blank_id\":1,\"choice\":\"B\"}]",
+  				"questionId": 2120657
+  			},
+  			"packageId": 4,
+  			"videoList": ["https://knowapp.b0.upaiyun.com/ss/audio/mp4/2shang8pailie04.mp4"]
+  		}, {
+  			"questionInfo": {
+  				"shortQuestion": "",
+  				"question": "#{\"type\":\"para_begin\",\"style\":\"math_text\"}#从2、3、4中任意选取其中2个数字组成不重复的组合一共有(  )。#{\"type\":\"para_end\"}#",
+  				"questionItem": [{
+  					"code": "A",
+  					"packageId": 7,
+  					"item": "2和3、3和4"
+  				}, {
+  					"code": "B",
+  					"packageId": 6,
+  					"item": "2和3、2和4、3和4、3和2"
+  				}, {
+  					"code": "C",
+  					"packageId": 8,
+  					"item": "2和3、2和4、3和4"
+  				}, {
+  					"code": "D",
+  					"packageId": 6,
+  					"item": "2和3、3和2"
+  				}],
+  				"questionType": 1,
+  				"rightAnswer": "[{\"blank_id\":1,\"choice\":\"C\"}]",
+  				"questionId": 2120658
+  			},
+  			"packageId": 5,
+  			"videoList": ["https://knowapp.b0.upaiyun.com/ss/audio/mp4/2shang8pailie05.mp4"]
+  		}, {
+  			"questionInfo": {
+  				"shortQuestion": "",
+  				"question": "#{\"type\":\"para_begin\",\"style\":\"math_text\"}#从2、3、4中任意选取其中2个数字组成不重复的组合一共有(  )。#{\"type\":\"para_end\"}#",
+  				"questionItem": [{
+  					"code": "A",
+  					"packageId": 7,
+  					"item": "2和3、3和4"
+  				}, {
+  					"code": "B",
+  					"packageId": 6,
+  					"item": "2和3、2和4、3和4、3和2"
+  				}, {
+  					"code": "C",
+  					"packageId": 8,
+  					"item": "2和3、2和4、3和4"
+  				}, {
+  					"code": "D",
+  					"packageId": 6,
+  					"item": "2和3、3和2"
+  				}],
+  				"questionType": 1,
+  				"rightAnswer": "[{\"blank_id\":1,\"choice\":\"C\"}]",
+  				"questionId": 2120658
+  			},
+  			"packageId": 6,
+  			"videoList": ["https://knowapp.b0.upaiyun.com/ss/audio/mp4/2shang8pailie06.mp4"]
+  		}, {
+  			"questionInfo": {
+  				"shortQuestion": "",
+  				"question": "#{\"type\":\"para_begin\",\"style\":\"math_text\"}#从2、3、4中任意选取其中2个数字组成不重复的组合一共有(  )。#{\"type\":\"para_end\"}#",
+  				"questionItem": [{
+  					"code": "A",
+  					"packageId": 7,
+  					"item": "2和3、3和4"
+  				}, {
+  					"code": "B",
+  					"packageId": 6,
+  					"item": "2和3、2和4、3和4、3和2"
+  				}, {
+  					"code": "C",
+  					"packageId": 8,
+  					"item": "2和3、2和4、3和4"
+  				}, {
+  					"code": "D",
+  					"packageId": 6,
+  					"item": "2和3、3和2"
+  				}],
+  				"questionType": 1,
+  				"rightAnswer": "[{\"blank_id\":1,\"choice\":\"C\"}]",
+  				"questionId": 2120658
+  			},
+  			"packageId": 7,
+  			"videoList": ["https://knowapp.b0.upaiyun.com/ss/audio/mp4/2shang8pailie07.mp4"]
+  		}, {
+  			"questionInfo": {
+  				"shortQuestion": "",
+  				"question": "#{\"type\":\"para_begin\",\"style\":\"math_text\"}#2和4可以组成的没有重复数字的两位数是(  )。#{\"type\":\"para_end\"}#",
+  				"questionItem": [{
+  					"code": "A",
+  					"packageId": 9,
+  					"item": "22、44"
+  				}, {
+  					"code": "B",
+  					"packageId": 9,
+  					"item": "24、42"
+  				}, {
+  					"code": "C",
+  					"packageId": 9,
+  					"item": "24、22"
+  				}],
+  				"questionType": 1,
+  				"rightAnswer": "[{\"blank_id\":1,\"choice\":\"B\"}]",
+  				"questionId": 2120659
+  			},
+  			"packageId": 8,
+  			"videoList": ["https://knowapp.b0.upaiyun.com/ss/audio/mp4/2shang8pailie08.mp4"]
+  		}, {
+  			"questionInfo": {
+  				"shortQuestion": "",
+  				"question": "#{\"type\":\"para_begin\",\"style\":\"math_text\"}#从2、3、4三个数字中，先任意选取其中2个数字组成不重复的组合，再把每个组合中的两个数字调换位置写出不同的两位数。这样的方法是(  )。#{\"type\":\"para_end\"}#",
+  				"questionItem": [{
+  					"code": "A",
+  					"packageId": 10,
+  					"item": "固定十位法"
+  				}, {
+  					"code": "B",
+  					"packageId": 10,
+  					"item": "固定个位法"
+  				}, {
+  					"code": "C",
+  					"packageId": 11,
+  					"item": "调换位置法"
+  				}],
+  				"questionType": 1,
+  				"rightAnswer": "[{\"blank_id\":1,\"choice\":\"C\"}]",
+  				"questionId": 2120660
+  			},
+  			"packageId": 9,
+  			"videoList": ["https://knowapp.b0.upaiyun.com/ss/audio/mp4/2shang8pailie09.mp4"]
+  		}, {
+  			"questionInfo": {
+  				"shortQuestion": "",
+  				"question": "#{\"type\":\"para_begin\",\"style\":\"math_text\"}#从2、3、4三个数字中，先任意选取其中2个数字组成不重复的组合，再把每个组合中的两个数字调换位置写出不同的两位数。这样的方法是(  )。#{\"type\":\"para_end\"}#",
+  				"questionItem": [{
+  					"code": "A",
+  					"packageId": 10,
+  					"item": "固定十位法"
+  				}, {
+  					"code": "B",
+  					"packageId": 10,
+  					"item": "固定个位法"
+  				}, {
+  					"code": "C",
+  					"packageId": 11,
+  					"item": "调换位置法"
+  				}],
+  				"questionType": 1,
+  				"rightAnswer": "[{\"blank_id\":1,\"choice\":\"C\"}]",
+  				"questionId": 2120660
+  			},
+  			"packageId": 10,
+  			"videoList": ["https://knowapp.b0.upaiyun.com/ss/audio/mp4/2shang8pailie10.mp4"]
+  		}, {
+  			"questionInfo": {
+  				"shortQuestion": "",
+  				"question": "#{\"type\":\"para_begin\",\"style\":\"math_text\"}#求由2、3、4组成的没有重复数字的两位数时，当十位上的数是3时，可以组成的两位数是(  )。#{\"type\":\"para_end\"}#",
+  				"questionItem": [{
+  					"code": "A",
+  					"packageId": 12,
+  					"item": "23"
+  				}, {
+  					"code": "B",
+  					"packageId": 13,
+  					"item": "32"
+  				}, {
+  					"code": "C",
+  					"packageId": 12,
+  					"item": "43、23"
+  				}, {
+  					"code": "D",
+  					"packageId": 14,
+  					"item": "32、34"
+  				}],
+  				"questionType": 1,
+  				"rightAnswer": "[{\"blank_id\":1,\"choice\":\"D\"}]",
+  				"questionId": 2120661
+  			},
+  			"packageId": 11,
+  			"videoList": ["https://knowapp.b0.upaiyun.com/ss/audio/mp4/2shang8pailie11.mp4"]
+  		}, {
+  			"questionInfo": {
+  				"shortQuestion": "",
+  				"question": "#{\"type\":\"para_begin\",\"style\":\"math_text\"}#求由2、3、4组成的没有重复数字的两位数时，当十位上的数是3时，可以组成的两位数是(  )。#{\"type\":\"para_end\"}#",
+  				"questionItem": [{
+  					"code": "A",
+  					"packageId": 12,
+  					"item": "23"
+  				}, {
+  					"code": "B",
+  					"packageId": 13,
+  					"item": "32"
+  				}, {
+  					"code": "C",
+  					"packageId": 12,
+  					"item": "43、23"
+  				}, {
+  					"code": "D",
+  					"packageId": 14,
+  					"item": "32、34"
+  				}],
+  				"questionType": 1,
+  				"rightAnswer": "[{\"blank_id\":1,\"choice\":\"D\"}]",
+  				"questionId": 2120661
+  			},
+  			"packageId": 12,
+  			"videoList": ["https://knowapp.b0.upaiyun.com/ss/audio/mp4/2shang8pailie12.mp4"]
+  		}, {
+  			"questionInfo": {
+  				"shortQuestion": "",
+  				"question": "#{\"type\":\"para_begin\",\"style\":\"math_text\"}#求由2、3、4组成的没有重复数字的两位数时，当十位上的数是3时，可以组成的两位数是(  )。#{\"type\":\"para_end\"}#",
+  				"questionItem": [{
+  					"code": "A",
+  					"packageId": 12,
+  					"item": "23"
+  				}, {
+  					"code": "B",
+  					"packageId": 13,
+  					"item": "32"
+  				}, {
+  					"code": "C",
+  					"packageId": 12,
+  					"item": "43、23"
+  				}, {
+  					"code": "D",
+  					"packageId": 14,
+  					"item": "32、34"
+  				}],
+  				"questionType": 1,
+  				"rightAnswer": "[{\"blank_id\":1,\"choice\":\"D\"}]",
+  				"questionId": 2120661
+  			},
+  			"packageId": 13,
+  			"videoList": ["https://knowapp.b0.upaiyun.com/ss/audio/mp4/2shang8pailie13.mp4"]
+  		}, {
+  			"questionInfo": {
+  				"shortQuestion": "",
+  				"question": "#{\"type\":\"para_begin\",\"style\":\"math_text\"}#用固定个位法求由2、3、4组成的没有重复数字的两位数正确的顺序是(  )。#{\"type\":\"para_end\"}#",
+  				"questionItem": [{
+  					"code": "A",
+  					"packageId": 15,
+  					"item": "32、23、24、42、34、43"
+  				}, {
+  					"code": "B",
+  					"packageId": 16,
+  					"item": "32、42、23、43、24、34"
+  				}, {
+  					"code": "C",
+  					"packageId": 15,
+  					"item": "23、24、32、34、42、43"
+  				}],
+  				"questionType": 1,
+  				"rightAnswer": "[{\"blank_id\":1,\"choice\":\"B\"}]",
+  				"questionId": 2120662
+  			},
+  			"packageId": 14,
+  			"videoList": ["https://knowapp.b0.upaiyun.com/ss/audio/mp4/2shang8pailie14.mp4"]
+  		}, {
+  			"questionInfo": {
+  				"shortQuestion": "",
+  				"question": "#{\"type\":\"para_begin\",\"style\":\"math_text\"}#用固定个位法求由2、3、4组成的没有重复数字的两位数正确的顺序是(  )。#{\"type\":\"para_end\"}#",
+  				"questionItem": [{
+  					"code": "A",
+  					"packageId": 15,
+  					"item": "32、23、24、42、34、43"
+  				}, {
+  					"code": "B",
+  					"packageId": 16,
+  					"item": "32、42、23、43、24、34"
+  				}, {
+  					"code": "C",
+  					"packageId": 15,
+  					"item": "23、24、32、34、42、43"
+  				}],
+  				"questionType": 1,
+  				"rightAnswer": "[{\"blank_id\":1,\"choice\":\"B\"}]",
+  				"questionId": 2120662
+  			},
+  			"packageId": 15,
+  			"videoList": ["https://knowapp.b0.upaiyun.com/ss/audio/mp4/2shang8pailie15.mp4"]
+  		}, {
+  			"questionInfo": {
+  				"shortQuestion": "",
+  				"question": "#{\"type\":\"para_begin\",\"style\":\"math_text\"}#由1、0、4组成的两位数，每个两位数的十位数和个位数不能一样，可以组成哪几个两位数？(  )#{\"type\":\"para_end\"}#",
+  				"questionItem": [{
+  					"code": "A",
+  					"packageId": 17,
+  					"item": "10、14、04、01、41、40"
+  				}, {
+  					"code": "B",
+  					"packageId": 17,
+  					"item": "10、14、04、01"
+  				}, {
+  					"code": "C",
+  					"packageId": 17,
+  					"item": "10、14、41、40"
+  				}],
+  				"questionType": 1,
+  				"rightAnswer": "[{\"blank_id\":1,\"choice\":\"C\"}]",
+  				"questionId": 2120663
+  			},
+  			"packageId": 16,
+  			"videoList": ["https://knowapp.b0.upaiyun.com/ss/audio/mp4/2shang8pailie16.mp4"]
+  		}, {
+  			"questionInfo": {
+  				"shortQuestion": "",
+  				"question": "#{\"type\":\"para_begin\",\"style\":\"math_text\"}#求由1、0、4组成的没有重复数字的两位数时，十位上的数可以是0吗？(  )#{\"type\":\"para_end\"}#",
+  				"questionItem": [{
+  					"code": "A",
+  					"packageId": 18,
+  					"item": "可以"
+  				}, {
+  					"code": "B",
+  					"packageId": 18,
+  					"item": "不可以"
+  				}],
+  				"questionType": 1,
+  				"rightAnswer": "[{\"blank_id\":1,\"choice\":\"B\"}]",
+  				"questionId": 2120664
+  			},
+  			"packageId": 17,
+  			"videoList": ["https://knowapp.b0.upaiyun.com/ss/audio/mp4/2shang8pailie17.mp4"]
+  		}, {
+  			"questionInfo": [],
+  			"packageId": 18,
+  			"videoList": ["https://knowapp.b0.upaiyun.com/ss/audio/mp4/2shang8pailie18.mp4"]
+  		}]
+  	},
+  	"msg": "成功"
+  }
+  var nodesAndEdges = nodesAndEdgesFromDataSource(ds);
+
+  // create an array with nodes
+  // var nodes = new vis.DataSet([
+  //   {id: 1, label: 'Node 1 Node 1 \nNode 1 Node 1\n Node 1 Node 1\n Node 1 Node 1 Node 1 ', shape: 'box', color: '#FF7657'},
+  //   {id: 2, label: 'Node 2', shape: 'circle', color: '#57AAFF'},
+  //   {id: 3, label: 'Node 3', shape: 'box', color: '#57AAFF'},
+  //   {id: 4, label: 'Node 4', shape: 'circle', color: '#57AAFF'},
+  //   {id: 5, label: 'Node 5', shape: 'box', color: '#61FF57'}
+  // ]);
+  var nodes = new vis.DataSet(nodesAndEdges.nodes);
+
+  // create an array with edges
+  // var edges = new vis.DataSet([
+  //   {from: 1, to: 3, label: 'horizontal', arrows:'to', 'physics': false, 'smooth': {'type': 'cubicBezier'}},
+  //   {from: 1, to: 2, label: 'horizontal', arrows:'to', 'physics': false, 'smooth': {'type': 'cubicBezier'}},
+  //   {from: 2, to: 4, label: 'horizontal', arrows:'to', 'physics': false, 'smooth': {'type': 'cubicBezier'}},
+  //   {from: 2, to: 5, label: 'horizontal', arrows:'to', 'physics': false, 'smooth': {'type': 'cubicBezier'}},
+  //   {from: 3, to: 3, label: 'horizontal', arrows:'to', 'physics': false, 'smooth': {'type': 'cubicBezier'}}
+  // ]);
+  var edges = new vis.DataSet(nodesAndEdges.edges);
+
+  // create a network
+  var container = document.getElementById('mynetwork');
+  var data = {
+    nodes: nodes,
+    edges: edges
+  };
+  var options = {
+    physics:{
+      enabled: true,
+      barnesHut: {
+        gravitationalConstant: -2000,
+        centralGravity: 0.1,
+        springLength: 300,
+        springConstant: 0.04,
+        damping: 0.09,
+        avoidOverlap: 0.8
+      }
+    }
+  };
+  var network = new vis.Network(container, data, options);
+</script>
+
+
+</body>
+</html>
