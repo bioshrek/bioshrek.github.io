@@ -1,0 +1,358 @@
+<!doctype html>
+<html>
+<head>
+  <title>Network | Basic usage</title>
+
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.js"></script>
+  <script type="text/javascript" src="./questionNetwork.js"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis-network.min.css" rel="stylesheet" type="text/css" />
+
+  <style type="text/css">
+    #mynetwork {
+      width: 100%;
+      height: 2046px;
+      border: 1px solid lightgray;
+    }
+  </style>
+</head>
+<body>
+
+<p>
+  可移动，可缩放。短视频，第一单元。
+</p>
+
+<div id="mynetwork"></div>
+
+<script type="text/javascript">
+  const ds = {
+	  "code": 99999,
+	  "data": {
+  		"exerciseStatus": 3,
+  		"unitName": "第八单元",
+  		"sectionName": "第二关",
+  		"allowTime": 90000,
+  		"subjectType": "0",
+  		"levelType": "23",
+  		"packageList": [{
+  			"questionInfo": {
+  				"shortQuestion": "",
+  				"question": "#{\"type\":\"para_begin\",\"style\":\"math_text\"}#有3个数2、5、9，任意选取2个求和，得数有(  )种可能。#{\"type\":\"para_end\"}#",
+  				"questionItem": [{
+  					"code": "A",
+  					"packageId": 20,
+  					"item": "3种"
+  				}, {
+  					"code": "B",
+  					"packageId": 20,
+  					"item": "6种"
+  				}, {
+  					"code": "C",
+  					"packageId": 20,
+  					"item": "7种"
+  				}],
+  				"questionType": 1,
+  				"rightAnswer": "[{\"blank_id\":1,\"choice\":\"A\"}]",
+  				"questionId": 2120649
+  			},
+  			"packageId": 19,
+  			"videoList": ["https://knowapp.b0.upaiyun.com/ss/audio/mp4/2shang8zuhe01.mp4"]
+  		}, {
+  			"questionInfo": {
+  				"shortQuestion": "",
+  				"question": "#{\"type\":\"para_begin\",\"style\":\"math_text\"}#有3个数2、5、9，任意选取2个求和，对“求和”理解正确的是(  )。#{\"type\":\"para_end\"}#",
+  				"questionItem": [{
+  					"code": "A",
+  					"packageId": 21,
+  					"item": "任意选取2个数字组成一个两位数"
+  				}, {
+  					"code": "B",
+  					"packageId": 21,
+  					"item": "任意选取2个数字相减"
+  				}, {
+  					"code": "C",
+  					"packageId": 22,
+  					"item": "任意选取2个数字相加"
+  				}],
+  				"questionType": 1,
+  				"rightAnswer": "[{\"blank_id\":1,\"choice\":\"C\"}]",
+  				"questionId": 2120650
+  			},
+  			"packageId": 20,
+  			"videoList": ["https://knowapp.b0.upaiyun.com/ss/audio/mp4/2shang8zuhe02.mp4"]
+  		}, {
+  			"questionInfo": {
+  				"shortQuestion": "",
+  				"question": "#{\"type\":\"para_begin\",\"style\":\"math_text\"}#有3个数2、5、9，任意选取2个求和，对“求和”理解正确的是(  )。#{\"type\":\"para_end\"}#",
+  				"questionItem": [{
+  					"code": "A",
+  					"packageId": 21,
+  					"item": "任意选取2个数字组成一个两位数"
+  				}, {
+  					"code": "B",
+  					"packageId": 21,
+  					"item": "任意选取2个数字相减"
+  				}, {
+  					"code": "C",
+  					"packageId": 22,
+  					"item": "任意选取2个数字相加"
+  				}],
+  				"questionType": 1,
+  				"rightAnswer": "[{\"blank_id\":1,\"choice\":\"C\"}]",
+  				"questionId": 2120650
+  			},
+  			"packageId": 21,
+  			"videoList": ["https://knowapp.b0.upaiyun.com/ss/audio/mp4/2shang8zuhe03.mp4"]
+  		}, {
+  			"questionInfo": {
+  				"shortQuestion": "",
+  				"question": "#{\"type\":\"para_begin\",\"style\":\"math_text\"}#有3个数2、5、9，任意选取2个求和，得数有几种可能？对“得数有几种可能”理解正确的是(  )。#{\"type\":\"para_end\"}#",
+  				"questionItem": [{
+  					"code": "A",
+  					"packageId": 22,
+  					"item": "2+5和5+2的得数算两种可能"
+  				}, {
+  					"code": "B",
+  					"packageId": 23,
+  					"item": "2+5和5+2的得数算一种可能"
+  				}],
+  				"questionType": 1,
+  				"rightAnswer": "[{\"blank_id\":1,\"choice\":\"B\"}]",
+  				"questionId": 2120651
+  			},
+  			"packageId": 22,
+  			"videoList": ["https://knowapp.b0.upaiyun.com/ss/audio/mp4/2shang8zuhe04.mp4"]
+  		}, {
+  			"questionInfo": {
+  				"shortQuestion": "",
+  				"question": "#{\"type\":\"para_begin\",\"style\":\"math_text\"}#有3个数2、5、9，任意选取2个求和，得数有几种可能？用列表法怎么解决：(  )#{\"type\":\"para_end\"}#",
+  				"questionItem": [{
+  					"code": "A",
+  					"packageId": 25,
+  					"item": "#{\"type\":\"img\",\"src\":\"https://tikuqiniu.knowbox.cn/FqOX3OIjDNGL_84GU0fRBJD0sTUp\",\"size\":\"mid_image\",\"id\":1}#"
+  				}, {
+  					"code": "B",
+  					"packageId": 24,
+  					"item": "#{\"type\":\"img\",\"src\":\"https://tikuqiniu.knowbox.cn/FpmODQpJYxMpwhSoOAVwb3SGpbuF\",\"size\":\"mid_image\",\"id\":1}#"
+  				}],
+  				"questionType": 1,
+  				"rightAnswer": "[{\"blank_id\":1,\"choice\":\"A\"}]",
+  				"questionId": 2120653
+  			},
+  			"packageId": 23,
+  			"videoList": ["https://knowapp.b0.upaiyun.com/ss/audio/mp4/2shang8zuhe05.mp4"]
+  		}, {
+  			"questionInfo": {
+  				"shortQuestion": "",
+  				"question": "#{\"type\":\"para_begin\",\"style\":\"math_text\"}#有3个数2、5、9，任意选取2个求和，得数有几种可能？用列表法怎么解决：(  )#{\"type\":\"para_end\"}#",
+  				"questionItem": [{
+  					"code": "A",
+  					"packageId": 25,
+  					"item": "#{\"type\":\"img\",\"src\":\"https://tikuqiniu.knowbox.cn/FqOX3OIjDNGL_84GU0fRBJD0sTUp\",\"size\":\"mid_image\",\"id\":1}#"
+  				}, {
+  					"code": "B",
+  					"packageId": 24,
+  					"item": "#{\"type\":\"img\",\"src\":\"https://tikuqiniu.knowbox.cn/FpmODQpJYxMpwhSoOAVwb3SGpbuF\",\"size\":\"mid_image\",\"id\":1}#"
+  				}],
+  				"questionType": 1,
+  				"rightAnswer": "[{\"blank_id\":1,\"choice\":\"A\"}]",
+  				"questionId": 2120653
+  			},
+  			"packageId": 24,
+  			"videoList": ["https://knowapp.b0.upaiyun.com/ss/audio/mp4/2shang8zuhe06.mp4"]
+  		}, {
+  			"questionInfo": {
+  				"shortQuestion": "",
+  				"question": "#{\"type\":\"para_begin\",\"style\":\"math_text\"}#解决“有3个数2、5、9，任意选取2个求和，得数有几种可能？”这道题时，可以用什么方法？(  )#{\"type\":\"para_end\"}#",
+  				"questionItem": [{
+  					"code": "A",
+  					"packageId": 27,
+  					"item": "列表法"
+  				}, {
+  					"code": "B",
+  					"packageId": 26,
+  					"item": "固定十位法"
+  				}, {
+  					"code": "C",
+  					"packageId": 26,
+  					"item": "调换位置法"
+  				}],
+  				"questionType": 1,
+  				"rightAnswer": "[{\"blank_id\":1,\"choice\":\"A\"}]",
+  				"questionId": 2120652
+  			},
+  			"packageId": 25,
+  			"videoList": ["https://knowapp.b0.upaiyun.com/ss/audio/mp4/2shang8zuhe07.mp4"]
+  		}, {
+  			"questionInfo": {
+  				"shortQuestion": "",
+  				"question": "#{\"type\":\"para_begin\",\"style\":\"math_text\"}#解决“有3个数2、5、9，任意选取2个求和，得数有几种可能？”这道题时，可以用什么方法？(  )#{\"type\":\"para_end\"}#",
+  				"questionItem": [{
+  					"code": "A",
+  					"packageId": 27,
+  					"item": "列表法"
+  				}, {
+  					"code": "B",
+  					"packageId": 26,
+  					"item": "固定十位法"
+  				}, {
+  					"code": "C",
+  					"packageId": 26,
+  					"item": "调换位置法"
+  				}],
+  				"questionType": 1,
+  				"rightAnswer": "[{\"blank_id\":1,\"choice\":\"A\"}]",
+  				"questionId": 2120652
+  			},
+  			"packageId": 26,
+  			"videoList": ["https://knowapp.b0.upaiyun.com/ss/audio/mp4/2shang8zuhe04.mp4"]
+  		}, {
+  			"questionInfo": {
+  				"shortQuestion": "",
+  				"question": "#{\"type\":\"para_begin\",\"style\":\"math_text\"}#有3个数2、5、9，任意选取2个求和，得数有几种可能？用连线法正确的表示是( )。#{\"type\":\"para_end\"}#",
+  				"questionItem": [{
+  					"code": "A",
+  					"packageId": 28,
+  					"item": "#{\"type\":\"img\",\"src\":\"https://tikuqiniu.knowbox.cn/FttOQ8pE7ANOeruLlx5hB4tDPtn8\",\"size\":\"mid_image\",\"id\":1}# "
+  				}, {
+  					"code": "B",
+  					"packageId": 30,
+  					"item": "#{\"type\":\"img\",\"src\":\"https://tikuqiniu.knowbox.cn/Fn7Sjc58VPxHm-QBdgn33nLEFlz8\",\"size\":\"mid_image\",\"id\":1}# "
+  				}, {
+  					"code": "C",
+  					"packageId": 29,
+  					"item": "#{\"type\":\"img\",\"src\":\"https://tikuqiniu.knowbox.cn/Fvn2HE74hxMhrs7-LDvlA23X6mD1\",\"size\":\"mid_image\",\"id\":1}# "
+  				}],
+  				"questionType": 1,
+  				"rightAnswer": "[{\"blank_id\":1,\"choice\":\"B\"}]",
+  				"questionId": 2120654
+  			},
+  			"packageId": 27,
+  			"videoList": ["https://knowapp.b0.upaiyun.com/ss/audio/mp4/2shang8zuhe08.mp4"]
+  		}, {
+  			"questionInfo": {
+  				"shortQuestion": "",
+  				"question": "#{\"type\":\"para_begin\",\"style\":\"math_text\"}#有3个数2、5、9，任意选取2个求和，得数有几种可能？用连线法正确的表示是( )。#{\"type\":\"para_end\"}#",
+  				"questionItem": [{
+  					"code": "A",
+  					"packageId": 28,
+  					"item": "#{\"type\":\"img\",\"src\":\"https://tikuqiniu.knowbox.cn/FttOQ8pE7ANOeruLlx5hB4tDPtn8\",\"size\":\"mid_image\",\"id\":1}# "
+  				}, {
+  					"code": "B",
+  					"packageId": 30,
+  					"item": "#{\"type\":\"img\",\"src\":\"https://tikuqiniu.knowbox.cn/Fn7Sjc58VPxHm-QBdgn33nLEFlz8\",\"size\":\"mid_image\",\"id\":1}# "
+  				}, {
+  					"code": "C",
+  					"packageId": 29,
+  					"item": "#{\"type\":\"img\",\"src\":\"https://tikuqiniu.knowbox.cn/Fvn2HE74hxMhrs7-LDvlA23X6mD1\",\"size\":\"mid_image\",\"id\":1}# "
+  				}],
+  				"questionType": 1,
+  				"rightAnswer": "[{\"blank_id\":1,\"choice\":\"B\"}]",
+  				"questionId": 2120654
+  			},
+  			"packageId": 28,
+  			"videoList": ["https://knowapp.b0.upaiyun.com/ss/audio/mp4/2shang8zuhe06.mp4"]
+  		}, {
+  			"questionInfo": {
+  				"shortQuestion": "",
+  				"question": "#{\"type\":\"para_begin\",\"style\":\"math_text\"}#有3个数2、5、9，任意选取2个求和，得数有几种可能？用连线法正确的表示是( )。#{\"type\":\"para_end\"}#",
+  				"questionItem": [{
+  					"code": "A",
+  					"packageId": 28,
+  					"item": "#{\"type\":\"img\",\"src\":\"https://tikuqiniu.knowbox.cn/FttOQ8pE7ANOeruLlx5hB4tDPtn8\",\"size\":\"mid_image\",\"id\":1}# "
+  				}, {
+  					"code": "B",
+  					"packageId": 30,
+  					"item": "#{\"type\":\"img\",\"src\":\"https://tikuqiniu.knowbox.cn/Fn7Sjc58VPxHm-QBdgn33nLEFlz8\",\"size\":\"mid_image\",\"id\":1}# "
+  				}, {
+  					"code": "C",
+  					"packageId": 29,
+  					"item": "#{\"type\":\"img\",\"src\":\"https://tikuqiniu.knowbox.cn/Fvn2HE74hxMhrs7-LDvlA23X6mD1\",\"size\":\"mid_image\",\"id\":1}# "
+  				}],
+  				"questionType": 1,
+  				"rightAnswer": "[{\"blank_id\":1,\"choice\":\"B\"}]",
+  				"questionId": 2120654
+  			},
+  			"packageId": 29,
+  			"videoList": ["https://knowapp.b0.upaiyun.com/ss/audio/mp4/2shang8zuhe09.mp4"]
+  		}, {
+  			"questionInfo": {
+  				"shortQuestion": "",
+  				"question": "#{\"type\":\"para_begin\",\"style\":\"math_text\"}#（1）已知有3个数3、6、8，任意选取2个数字求和，得数有（ ）种可能。#{\"type\":\"P\"}#（2）已知有3个数3、6、8组成两位数，每个两位数的十位数和个位数不能一样，能组成（ ）个两位数。(  )#{\"type\":\"para_end\"}#",
+  				"questionItem": [{
+  					"code": "A",
+  					"packageId": 30,
+  					"item": "（1）6种，（2）6个"
+  				}, {
+  					"code": "B",
+  					"packageId": 30,
+  					"item": "（1）3种，（2）3个"
+  				}, {
+  					"code": "C",
+  					"packageId": 31,
+  					"item": "（1）3种，（2）6个"
+  				}, {
+  					"code": "D",
+  					"packageId": 30,
+  					"item": "（1）6种，（2）3个"
+  				}],
+  				"questionType": 1,
+  				"rightAnswer": "[{\"blank_id\":1,\"choice\":\"C\"}]",
+  				"questionId": 2120655
+  			},
+  			"packageId": 30,
+  			"videoList": ["https://knowapp.b0.upaiyun.com/ss/audio/mp4/2shang8zuhe10.mp4"]
+  		}, {
+  			"questionInfo": [],
+  			"packageId": 31,
+  			"videoList": ["https://knowapp.b0.upaiyun.com/ss/audio/mp4/2shang8zuhe11.mp4"]
+  		}]
+  	},
+  	"msg": "成功"
+  };
+  var nodesAndEdges = nodesAndEdgesFromDataSource(ds);
+
+  // create an array with nodes
+  // var nodes = new vis.DataSet([
+  //   {id: 1, label: 'Node 1 Node 1 \nNode 1 Node 1\n Node 1 Node 1\n Node 1 Node 1 Node 1 ', shape: 'box', color: '#FF7657'},
+  //   {id: 2, label: 'Node 2', shape: 'circle', color: '#57AAFF'},
+  //   {id: 3, label: 'Node 3', shape: 'box', color: '#57AAFF'},
+  //   {id: 4, label: 'Node 4', shape: 'circle', color: '#57AAFF'},
+  //   {id: 5, label: 'Node 5', shape: 'box', color: '#61FF57'}
+  // ]);
+  var nodes = new vis.DataSet(nodesAndEdges.nodes);
+
+  // create an array with edges
+  // var edges = new vis.DataSet([
+  //   {from: 1, to: 3, label: 'horizontal', arrows:'to', 'physics': false, 'smooth': {'type': 'cubicBezier'}},
+  //   {from: 1, to: 2, label: 'horizontal', arrows:'to', 'physics': false, 'smooth': {'type': 'cubicBezier'}},
+  //   {from: 2, to: 4, label: 'horizontal', arrows:'to', 'physics': false, 'smooth': {'type': 'cubicBezier'}},
+  //   {from: 2, to: 5, label: 'horizontal', arrows:'to', 'physics': false, 'smooth': {'type': 'cubicBezier'}},
+  //   {from: 3, to: 3, label: 'horizontal', arrows:'to', 'physics': false, 'smooth': {'type': 'cubicBezier'}}
+  // ]);
+  var edges = new vis.DataSet(nodesAndEdges.edges);
+
+  // create a network
+  var container = document.getElementById('mynetwork');
+  var data = {
+    nodes: nodes,
+    edges: edges
+  };
+  var options = {
+    physics:{
+      enabled: true,
+      barnesHut: {
+        gravitationalConstant: -2000,
+        centralGravity: 0.1,
+        springLength: 300,
+        springConstant: 0.04,
+        damping: 0.09,
+        avoidOverlap: 0.8
+      }
+    }
+  };
+  var network = new vis.Network(container, data, options);
+</script>
+
+
+</body>
+</html>
