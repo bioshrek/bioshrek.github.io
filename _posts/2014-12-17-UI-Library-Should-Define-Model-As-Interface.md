@@ -1,9 +1,8 @@
 ---
 layout: post
-title: UI library should define model as interface
+title: UI library should define model as interface instead of concrete class
+summary: UI library can be more generic providing the protocol interface than binding to concrete class. All client code need is creating adapers which extends the domain layer model as well as implements the UI data model interfaces.
 ---
-
-## UI library should define model as interface instead of concrete class 
 
 When developing an GUI app, we often write the domain layer and the UI layer, and use controllers to condinate these 2 layers, aka MVC.
 
